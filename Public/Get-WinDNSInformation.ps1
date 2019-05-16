@@ -28,10 +28,9 @@
         $Data.ServerGlobalQueryBlockList = Get-DnsServerGlobalQueryBlockList -ComputerName $Computer
         # $Data.ServerPolicies = $DNSServer.ServerPolicies
 
-        # done
+
         $Data.ServerRecursion = Get-WinDnsServerRecursion -ComputerName $Computer #DONE
 
-        # not done
         $Data.ServerRecursionScopes = Get-DnsServerRecursionScope -ComputerName $Computer
         $Data.ServerResponseRateLimiting = Get-DnsServerResponseRateLimiting -ComputerName $Computer
         $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Compute
