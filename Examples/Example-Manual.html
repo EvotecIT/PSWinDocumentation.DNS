@@ -1,0 +1,3521 @@
+﻿<!DOCTYPE html>
+<html><!-- HEADER -->
+<head><meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta name="author"/>
+<meta content="2019-05-17 00:21:57" name="revised"/>
+<title></title>
+<!-- CSS Default fonts START -->
+<link href="https://fonts.googleapis.com/css?family=Roboto|Hammersmith+One|Questrial|Oswald" type="text/css" rel="stylesheet"/>
+<!-- CSS Default fonts END -->
+<!-- CSS Default fonts icons START -->
+<link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" type="text/css" rel="stylesheet"/>
+<!-- CSS Default fonts icons END -->
+<!-- CSS Always Required Default Visual Settings START -->
+<style type="text/css">body {
+    font-family: Roboto Condensed, Helvetica Neue, sans-serif;
+    font-size: 8pt;
+}
+
+hr {
+    height: 4px;
+    background-color: #6Cf;
+    border: 0px;
+    width: 100%;
+}
+
+div.clientlogo {
+    border: 0px;
+    vertical-align: middle;
+    text-align: left;
+    display: inline-block;
+    width: 50%;
+}
+
+div.MainLogo {
+    border: 0px;
+    vertical-align: middle;
+    text-align: right;
+    display: inline-block;
+    width: 50%;
+}
+
+.central {
+    margin: 10px auto;
+    /* width: 100%; */
+    max-width: 900px;
+}
+
+div.defaultSection {
+    border: 1px solid #bbbbbb;
+    padding-bottom: 0px;
+    margin: 5px;
+    width: calc(100% - 10px);
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+div.defaultColumn {
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 2px;
+}
+
+.defaultContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.defaultContainerOther {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.defaultPanelOther {
+    flex-basis: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.defaultPanel {
+    flex-basis: 100%;
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.defaultCard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+div.defaultHeader {
+    padding: 5px;
+    margin: 0px 0px 0px 0px;
+    font-weight: bold;
+    /* color: #ffffff;
+    background-color: #6Cf;
+    */
+}
+
+div.defaultFooter {
+    padding-right: 5em;
+    text-align: right;
+}
+
+
+
+td.clientlogo {
+    border: 0px;
+    padding-left: 0px;
+    vertical-align: middle;
+}
+
+td.MainLogo {
+    border: 0px;
+    padding-right: 5em;
+    text-align: right;
+    vertical-align: middle;
+}
+
+/*
+
+th.content {
+    border-top: 1px solid #bbbbbb;
+    width: 25%;
+}
+
+td.content {
+    width: 75%;
+}
+
+td.groupby {
+    border-top: 3px double #bbbbbb;
+}
+*/
+
+.header {
+    background-color: #616a6b;
+    color: #f7f9f9;
+}
+
+a.alink:link {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 120%;
+}
+
+a.alink:visited {
+    color: #ff8400;
+    text-decoration: none;
+    font-size: 120%;
+}
+
+a.alink:hover {
+    text-decoration: underline;
+    font-size: 130%;
+}
+
+table.sortable {
+    width: calc(100% - 10px);
+    margin: 5px;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    display: inline-block;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+table.sortable thead {
+    background-color: #eee;
+    color: #666666;
+    font-weight: bold;
+    cursor: default;
+}
+
+/* Adding CSS */
+
+a.paginate_button {
+    color: #000000 !important;
+    font-size: 10px;
+}
+
+a.current {
+    color: #000000 !important;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+.flex-grid {
+    display: flex;
+}
+
+.col {
+    padding: 20px;
+    margin: 1%;
+    flex: 1;
+}
+
+.orange {
+    background-color: #f39c12;
+}
+
+.red {
+    background-color: #ff4136;
+}
+
+.green {
+    background-color: #2ecc40;
+}
+
+div.enlighter-default {
+    flex-basis: 100%;
+    margin: 0 !important;
+}
+</style>
+<style type="text/css">/*
+#aspect-content {
+    margin: 50px 0 0;
+    font-family: "Poppins", sans-serif;
+}
+*/
+
+/*
+#aspect-content * {
+    box-sizing: border-box;
+}
+*/
+
+/*
+.aspect-tab {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 10px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #ececec;
+    opacity: 1;
+    transition: box-shadow .2s, opacity .4s;
+}
+*/
+
+.aspect-tab:hover {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.11);
+}
+
+.aspect-input {
+    display: none;
+}
+
+.aspect-input:checked~.aspect-content+.aspect-tab-content {
+    max-height: 3000px;
+}
+
+.aspect-input:checked~.aspect-content:after {
+    transform: rotate(0);
+}
+
+.aspect-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    /*
+    max-height: 80px;
+      */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.aspect-label:hover~.aspect-content:after {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTI0IDI0SDBWMGgyNHoiIG9wYWNpdHk9Ii44NyIvPgogICAgICAgIDxwYXRoIGZpbGw9IiM1NTZBRUEiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE1Ljg4IDE1LjI5TDEyIDExLjQxbC0zLjg4IDMuODhhLjk5Ni45OTYgMCAxIDEtMS40MS0xLjQxbDQuNTktNC41OWEuOTk2Ljk5NiAwIDAgMSAxLjQxIDBsNC41OSA0LjU5Yy4zOS4zOS4zOSAxLjAyIDAgMS40MS0uMzkuMzgtMS4wMy4zOS0xLjQyIDB6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=");
+}
+
+.aspect-content {
+    position: relative;
+    display: block;
+    /*
+    height: 80px;
+    */
+    margin: 0;
+    padding: 0 87px 0 30px;
+    font-size: 0;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+}
+
+.aspect-content:before,
+.aspect-content:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aspect-content:before {
+    height: 100%;
+}
+
+.aspect-content:after {
+    position: absolute;
+    width: 24px;
+    height: 100%;
+    right: 30px;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZD0iTTI0IDI0SDBWMGgyNHoiIG9wYWNpdHk9Ii44NyIvPgogICAgICAgIDxwYXRoIGZpbGw9IiNBOUFDQUYiIGZpbGwtcnVsZT0ibm9uemVybyIgZD0iTTE1Ljg4IDE1LjI5TDEyIDExLjQxbC0zLjg4IDMuODhhLjk5Ni45OTYgMCAxIDEtMS40MS0xLjQxbDQuNTktNC41OWEuOTk2Ljk5NiAwIDAgMSAxLjQxIDBsNC41OSA0LjU5Yy4zOS4zOS4zOSAxLjAyIDAgMS40MS0uMzkuMzgtMS4wMy4zOS0xLjQyIDB6Ii8+CiAgICA8L2c+Cjwvc3ZnPgo=");
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(180deg);
+}
+
+.aspect-name {
+    display: inline-block;
+    width: 75%;
+    margin-left: 16px;
+    font-weight: 500;
+    color: #242a32;
+    white-space: normal;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.aspect-stat {
+    width: 40%;
+    text-align: right;
+}
+
+.all-opinions,
+.aspect-name {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.all-opinions {
+    color: #5d5d5d;
+    text-align: left;
+}
+
+.aspect-content+.aspect-tab-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s;
+}
+
+.aspect-content>div,
+.aspect-stat>div {
+    display: inline-block;
+}
+
+.aspect-content>div {
+    vertical-align: middle;
+}
+
+.positive-count,
+.negative-count,
+.neutral-count {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    padding-left: 26px;
+    background-repeat: no-repeat;
+    font-size: 13px;
+    line-height: 20px;
+    color: #363636;
+}
+
+.positive-count {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiM3RUQzMjEiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDE4LjU3MWMtNC43MjYgMC04LjU3MS0zLjg0NS04LjU3MS04LjU3MSAwLTQuNzI2IDMuODQ1LTguNTcxIDguNTcxLTguNTcxIDQuNzI2IDAgOC41NzEgMy44NDUgOC41NzEgOC41NzEgMCA0LjcyNi0zLjg0NSA4LjU3MS04LjU3MSA4LjU3MXpNMjAgMTBjMCA1LjUxNC00LjQ4NiAxMC0xMCAxMFMwIDE1LjUxNCAwIDEwIDQuNDg2IDAgMTAgMHMxMCA0LjQ4NiAxMCAxMHpNNSAxMS40MjdhNSA1IDAgMCAwIDEwIDAgLjcxNC43MTQgMCAxIDAtMS40MjkgMCAzLjU3MSAzLjU3MSAwIDAgMS03LjE0MiAwIC43MTQuNzE0IDAgMSAwLTEuNDI5IDB6bTEuMDcxLTVhMS4wNzEgMS4wNzEgMCAxIDAgMCAyLjE0MyAxLjA3MSAxLjA3MSAwIDAgMCAwLTIuMTQzem03Ljg1OCAwYTEuMDcxIDEuMDcxIDAgMSAwIDAgMi4xNDMgMS4wNzEgMS4wNzEgMCAwIDAgMC0yLjE0M3oiLz4KPC9zdmc+Cg==");
+}
+
+.negative-count {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNGRjZFMDAiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDE4LjU3MWMtNC43MjYgMC04LjU3MS0zLjg0NS04LjU3MS04LjU3MSAwLTQuNzI2IDMuODQ1LTguNTcxIDguNTcxLTguNTcxIDQuNzI2IDAgOC41NzEgMy44NDUgOC41NzEgOC41NzEgMCA0LjcyNi0zLjg0NSA4LjU3MS04LjU3MSA4LjU3MXpNMjAgMTBjMCA1LjUxNC00LjQ4NiAxMC0xMCAxMFMwIDE1LjUxNCAwIDEwIDQuNDg2IDAgMTAgMHMxMCA0LjQ4NiAxMCAxMHpNNSAxNC45OThhLjcxNC43MTQgMCAwIDAgMS40MjkgMCAzLjU3MSAzLjU3MSAwIDAgMSA3LjE0MiAwIC43MTQuNzE0IDAgMSAwIDEuNDI5IDAgNSA1IDAgMSAwLTEwIDB6bTEuMDcxLTguNTdhMS4wNzEgMS4wNzEgMCAxIDAgMCAyLjE0MiAxLjA3MSAxLjA3MSAwIDAgMCAwLTIuMTQzem03Ljg1OCAwYTEuMDcxIDEuMDcxIDAgMSAwIDAgMi4xNDIgMS4wNzEgMS4wNzEgMCAwIDAgMC0yLjE0M3oiLz4KPC9zdmc+Cg==");
+}
+
+.neutral-count {
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNCQUMyRDYiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTEwIDE4LjU3MWMtNC43MjYgMC04LjU3MS0zLjg0NS04LjU3MS04LjU3MSAwLTQuNzI2IDMuODQ1LTguNTcxIDguNTcxLTguNTcxIDQuNzI2IDAgOC41NzEgMy44NDUgOC41NzEgOC41NzEgMCA0LjcyNi0zLjg0NSA4LjU3MS04LjU3MSA4LjU3MXpNMjAgMTBjMCA1LjUxNC00LjQ4NiAxMC0xMCAxMFMwIDE1LjUxNCAwIDEwIDQuNDg2IDAgMTAgMHMxMCA0LjQ4NiAxMCAxMHpNNS43MTQgMTEuNDI3YS43MTQuNzE0IDAgMSAwIDAgMS40MjloOC41NzJhLjcxNC43MTQgMCAxIDAgMC0xLjQyOUg1LjcxNHptLjM1Ny01YTEuMDcxIDEuMDcxIDAgMSAwIDAgMi4xNDMgMS4wNzEgMS4wNzEgMCAwIDAgMC0yLjE0M3ptNy44NTggMGExLjA3MSAxLjA3MSAwIDEgMCAwIDIuMTQzIDEuMDcxIDEuMDcxIDAgMCAwIDAtMi4xNDN6Ii8+Cjwvc3ZnPgo=");
+}
+
+.aspect-info {
+    width: 60%;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.aspect-info:before {
+    content: '';
+    display: inline-block;
+    height: 44px;
+    vertical-align: middle;
+}
+
+.chart-pie {
+    position: relative;
+    display: inline-block;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: #e4e4e4;
+    vertical-align: middle;
+}
+
+.chart-pie:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    top: 2px;
+    left: 2px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.chart-pie-count {
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #242a32;
+    text-align: center;
+    z-index: 1;
+}
+
+.chart-pie>div {
+    clip: rect(0, 44px, 44px, 22px);
+}
+
+.chart-pie>div,
+.chart-pie.over50 .first-fill {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+}
+
+.chart-pie.over50>div {
+    clip: rect(auto, auto, auto, auto);
+}
+
+.chart-pie.over50 .first-fill {
+    clip: rect(0, 44px, 44px, 22px);
+}
+
+.chart-pie:not(.over50) .first-fill {
+    display: none;
+}
+
+.second-fill {
+    position: absolute;
+    clip: rect(0, 22px, 44px, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border-width: 3px;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+.chart-pie.positive .first-fill {
+    background-color: #82d428;
+}
+
+.chart-pie.positive .second-fill {
+    border-color: #82d428;
+}
+
+.chart-pie.negative .first-fill {
+    background-color: #ff6e00;
+}
+
+.chart-pie.negative .second-fill {
+    border-color: #ff6e00;
+}
+
+.aspect-tab-content {
+
+    background-color: #f9f9f9;
+    /* font-size: 0;
+    text-align: justify;
+    */
+
+}
+
+.sentiment-wrapper {
+    display: flex;
+    /* padding: 24px 30px 30px; */
+}
+
+.sentiment-wrapper>div {
+    /*
+    display: inline-block;
+    width: 33.3%;
+
+
+    box-sizing: border-box;
+    vertical-align: top;
+    cursor: default;
+*/
+
+    /*
+    max-width: 390px;
+    padding: 0 5px;
+    */
+
+}
+
+.sentiment-wrapper>div>div {
+
+    width: 100%;
+    padding: 16px 24px 20px;
+    box-sizing: border-box;
+
+    border-radius: 4px;
+    background-color: #fff;
+    border: 1px solid #ececec;
+    text-align: left;
+}
+
+.opinion-header {
+    position: relative;
+    width: 100%;
+    margin: 0 0 24px;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #242a32;
+    text-transform: capitalize;
+}
+
+.opinion-header>span:nth-child(2) {
+    position: absolute;
+    right: 0;
+}
+
+.opinion-header+div>span {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #363636;
+}
+
+@media screen and (max-width: 800px) {
+    .aspect-label {
+        max-height: 102px;
+    }
+
+    .aspect-content {
+        height: auto;
+        padding: 10px 87px 10px 30px;
+    }
+
+    .aspect-content:before {
+        display: none;
+    }
+
+    .aspect-content:after {
+        top: 0;
+    }
+
+    .aspect-content>div {
+        display: block;
+        width: 100%;
+    }
+
+    .aspect-stat {
+        margin-top: 10px;
+        text-align: left;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .sentiment-wrapper>div {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .sentiment-wrapper>div:not(:first-child) {
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .aspect-label {
+        max-height: 140px;
+    }
+
+    .aspect-stat>div {
+        display: block;
+        width: 100%;
+    }
+
+    .all-opinions {
+        margin-bottom: 10px;
+    }
+
+    .all-opinions+div>span:first-child {
+        margin: 0;
+    }
+}
+</style>
+<!-- CSS Always Required Default Visual Settings END -->
+<!-- CSS Always Required Default Headings START -->
+<style type="text/css">h2:after,
+h3:after,
+h4:after,
+h5:after,
+h6:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    border-radius: 2px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.5), 0 1px 1px rgba(255, 255, 255, 0.3);
+}
+
+h2:after {
+    background: #0AF;
+}
+
+h3:after {
+    background: #3BF;
+}
+
+h4:after,
+h5:after,
+h6:after {
+    background: #6Cf;
+}
+
+h1.white,
+h2.white,
+h3.white,
+h4.white,
+h5.white,
+h6.white {
+    color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Hammersmith One', sans-serif;
+    /*
+    font-family: 'Questrial', sans-serif;
+    */
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 20px;
+    margin: 1em 0 .6em 0;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    color: #6Cf;
+}
+
+h2 {
+    margin: 1em 0 .6em 0;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    font-size: 25px;
+    line-height: 20px;
+}
+
+h3 {
+    margin: 1em 0 .6em 0;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    font-size: 24px;
+    line-height: 20px;
+}
+
+h4 {
+    margin: 1em 0 .6em 0;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    font-size: 18px;
+    line-height: 16px;
+}
+
+h5 {
+    margin: 1em 0 .6em 0;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    font-size: 14px;
+    line-height: 16px;
+}
+
+h6 {
+    margin: 1em 0 .6em 0;
+    padding: 0 0 0 20px;
+    font-weight: normal;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    position: relative;
+    font-size: 10px;
+    line-height: 12px;
+}
+</style>
+<!-- CSS Always Required Default Headings END -->
+
+
+<!-- CSS DataTables START -->
+<style type="text/css">/* Added to make sure plus logo fits in */
+td {
+    height: 27px;
+}
+
+/* Button in Table - giving it some colors */
+
+td.sorting_1::before {
+    background: #007bff !important;
+}
+
+td::before {
+    background: #007bff !important;
+}
+
+/* giving some spaces between tables being to close */
+
+div.dataTables_wrapper {
+    padding: 10px 10px 10px 10px;
+}
+
+button.dt-button {
+    color: blue !important;
+    border-radius: 5px;
+    line-height: 1 !important;
+}
+
+/* Filtering at the bottom */
+tfoot input {
+    width: 100%;
+    padding: -3px;
+    box-sizing: border-box;
+    font-size: 8pt;
+}
+
+/* Filtering at the top */
+thead input {
+    width: 100%;
+    padding: -3px;
+    box-sizing: border-box;
+    font-size: 8pt;
+}
+</style>
+<!-- CSS DataTables END -->
+<!-- CSS Elastic Tabs START -->
+<style type="text/css">.tabsWrapper {
+    text-align: center;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.tabs {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 0px;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    /*
+    display: inline-block;
+*/
+    border-radius: 4px;
+    position: relative;
+}
+
+.tabs .round {
+    border-radius: 4px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #777;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.6s;
+}
+
+.tabs a.active {
+    color: #fff;
+}
+
+.tabs a i {
+    margin-right: 5px;
+}
+
+.tabs .selector {
+    display: none;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    border-radius: 4px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #05abe0;
+    background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    background: -webkit-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#05abe0', endColorstr='#8200f4', GradientType=1);
+}
+
+.tabs-content {
+    display: none;
+}
+
+.tabs-content.active {
+    display: block;
+}
+</style>
+<!-- CSS Elastic Tabs END -->
+
+
+
+<!-- CSS DataTables START -->
+<style type="text/css">/* Added to make sure plus logo fits in */
+td {
+    height: 27px;
+}
+
+/* Button in Table - giving it some colors */
+
+td.sorting_1::before {
+    background: #007bff !important;
+}
+
+td::before {
+    background: #007bff !important;
+}
+
+/* giving some spaces between tables being to close */
+
+div.dataTables_wrapper {
+    padding: 10px 10px 10px 10px;
+}
+
+button.dt-button {
+    color: blue !important;
+    border-radius: 5px;
+    line-height: 1 !important;
+}
+
+/* Filtering at the bottom */
+tfoot input {
+    width: 100%;
+    padding: -3px;
+    box-sizing: border-box;
+    font-size: 8pt;
+}
+
+/* Filtering at the top */
+thead input {
+    width: 100%;
+    padding: -3px;
+    box-sizing: border-box;
+    font-size: 8pt;
+}
+</style>
+<!-- CSS DataTables END -->
+<noscript><!-- CSS DataTables START -->
+<style type="text/css">table {
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+    font-family: Roboto Condensed, Helvetica Neue, sans-serif;
+    font-size: 8pt;
+}
+
+th {
+    border-width: 1px;
+    padding: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: #00297A;
+    color: white;
+    font-family: Roboto Condensed, Helvetica Neue, sans-serif;
+    font-size: 8pt;
+}
+
+tr {
+    font-family: Roboto Condensed, Helvetica Neue, sans-serif;
+    font-size: 8pt;
+}
+
+td {
+    border-width: 1px;
+    padding-right: 2px;
+    padding-left: 2px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-style: solid;
+    border-color: black;
+    background-color: white;
+    font-family: Roboto Condensed, Helvetica Neue, sans-serif;
+    font-size: 8pt;
+}
+</style>
+<!-- CSS DataTables END -->
+</noscript>
+<!-- CSS Elastic Tabs START -->
+<style type="text/css">.tabsWrapper {
+    text-align: center;
+    margin: 10px auto;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.tabs {
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 0px;
+    list-style: none;
+    background: #fff;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+    /*
+    display: inline-block;
+*/
+    border-radius: 4px;
+    position: relative;
+}
+
+.tabs .round {
+    border-radius: 4px;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #777;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition-duration: 0.6s;
+}
+
+.tabs a.active {
+    color: #fff;
+}
+
+.tabs a i {
+    margin-right: 5px;
+}
+
+.tabs .selector {
+    display: none;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1;
+    border-radius: 4px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    background: #05abe0;
+    background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    background: -webkit-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    background: linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#05abe0', endColorstr='#8200f4', GradientType=1);
+}
+
+.tabs-content {
+    display: none;
+}
+
+.tabs-content.active {
+    display: block;
+}
+</style>
+<!-- CSS Elastic Tabs END -->
+
+<!-- JS DataTables PDF Features START -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js" type="text/javascript"></script>
+<!-- JS DataTables PDF Features END -->
+<!-- JS Jquery START -->
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript"></script>
+<!-- JS Jquery END -->
+<!-- CSS DataTables START -->
+<link href="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/af-2.3.2/b-1.5.4/b-colvis-1.5.4/b-html5-1.5.4/b-print-1.5.4/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.css" type="text/css" rel="stylesheet"/>
+<!-- CSS DataTables END -->
+<!-- JS DataTables START -->
+<script src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.10.18/af-2.3.2/b-1.5.4/b-colvis-1.5.4/b-html5-1.5.4/b-print-1.5.4/cr-1.5.0/fc-3.2.5/fh-3.1.4/kt-2.5.0/r-2.2.2/rg-1.1.0/rr-1.2.4/sc-1.5.0/sl-1.2.6/datatables.min.js" type="text/javascript"></script>
+<!-- JS DataTables END -->
+<!-- JS DataTables Excel Features START -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js" type="text/javascript"></script>
+<!-- JS DataTables Excel Features END -->
+</head>
+<!-- END HEADER -->
+<!-- BODY -->
+<body><div class="tabsWrapper"><div class="tabs"><div class="selector"></div>
+<a href="javascript:void(0)" class="active" data-id="Tab-emqhzlys"><div class="fas fa-bomb">AD1.AD.EVOTEC.XYZ</div></a>
+<a href="javascript:void(0)" data-id="Tab-1c4jpsdf"><div class="fas fa-bomb">AD2.AD.EVOTEC.XYZ</div></a>
+</div></div>
+<div id="Tab-emqhzlys" class="tabs-content active"><div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerCache" style="color: #ffffff;">ServerCache</a>
+<a id="show_461328164" href="javascript:void(0)" onclick="show('461328164');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_461328164" href="javascript:void(0)" onclick="hide('461328164');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="461328164" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="461328164"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-kSFBZObM').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-kSFBZObM" class="display compact"><thead><tr><th>DistinguishedName</th><th>IsAutoCreated</th><th>IsDsIntegrated</th><th>IsPaused</th><th>IsReadOnly</th><th>IsReverseLookupZone</th><th>IsShutdown</th><th>ZoneName</th><th>ZoneType</th><th>EnablePollutionProtection</th><th>IgnorePolicies</th><th>LockingPercent</th><th>MaxKBSize</th><th>MaxNegativeTtl</th><th>MaxTtl</th><th>StoreEmptyAuthenticationResponse</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>False</td><td>True</td><td>False</td><td>False</td><td>False</td><td>False</td><td>.</td><td>Cache</td><td>True</td><td>False</td><td>100</td><td>0</td><td>00:15:00</td><td>1.00:00:00</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerCache</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerClientSubnets" style="color: #ffffff;">ServerClientSubnets</a>
+<a id="show_2000559926" href="javascript:void(0)" onclick="show('2000559926');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_2000559926" href="javascript:void(0)" onclick="hide('2000559926');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="2000559926" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="2000559926"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-sEteReZv').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-sEteReZv" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDiagnostics" style="color: #ffffff;">ServerDiagnostics</a>
+<a id="show_1211195493" href="javascript:void(0)" onclick="show('1211195493');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1211195493" href="javascript:void(0)" onclick="hide('1211195493');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1211195493" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1211195493"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-FOyoaEQA').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-FOyoaEQA" class="display compact"><thead><tr><th>FilterIPAddressList</th><th>Answers</th><th>EnableLogFileRollover</th><th>EnableLoggingForLocalLookupEvent</th><th>EnableLoggingForPluginDllEvent</th><th>EnableLoggingForRecursiveLookupEvent</th><th>EnableLoggingForRemoteServerEvent</th><th>EnableLoggingForServerStartStopEvent</th><th>EnableLoggingForTombstoneEvent</th><th>EnableLoggingForZoneDataWriteEvent</th><th>EnableLoggingForZoneLoadingEvent</th><th>EnableLoggingToFile</th><th>EventLogLevel</th><th>FullPackets</th><th>LogFilePath</th><th>MaxMBFileSize</th><th>Notifications</th><th>Queries</th><th>QuestionTransactions</th><th>ReceivePackets</th><th>SaveLogsToPersistentStorage</th><th>SendPackets</th><th>TcpPackets</th><th>UdpPackets</th><th>UnmatchedResponse</th><th>Update</th><th>UseSystemEventLog</th><th>WriteThrough</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>True</td><td>4</td><td>False</td><td></td><td>500000000</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDiagnostics</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDirectoryPartition" style="color: #ffffff;">ServerDirectoryPartition</a>
+<a id="show_380684660" href="javascript:void(0)" onclick="show('380684660');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_380684660" href="javascript:void(0)" onclick="hide('380684660');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="380684660" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="380684660"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-AipNazmA').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-AipNazmA" class="display compact"><thead><tr><th>CrossReferenceDistinguishedName</th><th>DirectoryPartitionDistinguishedName</th><th>DirectoryPartitionName</th><th>Flags</th><th>Replica</th><th>State</th><th>ZoneCount</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td></td><td>DomainDnsZones.ad.evotec.pl</td><td>Not-Enlisted </td><td></td><td></td><td>0</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+<tr><td>CN=6c26e666-69ed-40bf-97ce-7f8ade04ae05,CN=Partitions,CN=Configuration,DC=ad,DC=evotec,DC=xyz</td><td>DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>DomainDnsZones.ad.evotec.xyz</td><td>Enlisted Auto Domain </td><td>System.String[]</td><td>0</td><td>3</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+<tr><td>CN=b8090d87-27f0-490f-979e-29b4221d7986,CN=Partitions,CN=Configuration,DC=ad,DC=evotec,DC=xyz</td><td>DC=ForestDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>ForestDnsZones.ad.evotec.xyz</td><td>Enlisted Auto Forest </td><td>System.String[]</td><td>0</td><td>3</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+</tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDsSetting" style="color: #ffffff;">ServerDsSetting</a>
+<a id="show_1958028811" href="javascript:void(0)" onclick="show('1958028811');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1958028811" href="javascript:void(0)" onclick="hide('1958028811');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1958028811" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1958028811"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-IfbiIwBa').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-IfbiIwBa" class="display compact"><thead><tr><th>DirectoryPartitionAutoEnlistInterval</th><th>LazyUpdateInterval</th><th>MinimumBackgroundLoadThreads</th><th>PollingInterval</th><th>RemoteReplicationDelay</th><th>TombstoneInterval</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>1.00:00:00</td><td>3</td><td>1</td><td>180</td><td>30</td><td>14.00:00:00</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDsSetting</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerEdns" style="color: #ffffff;">ServerEdns</a>
+<a id="show_876236515" href="javascript:void(0)" onclick="show('876236515');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_876236515" href="javascript:void(0)" onclick="hide('876236515');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="876236515" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="876236515"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-MvVFhPnh').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-MvVFhPnh" class="display compact"><thead><tr><th>CacheTimeout</th><th>EnableProbes</th><th>EnableReception</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>00:15:00</td><td>True</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerEDns</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerForwarder" style="color: #ffffff;">ServerForwarder</a>
+<a id="show_1875568084" href="javascript:void(0)" onclick="show('1875568084');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1875568084" href="javascript:void(0)" onclick="hide('1875568084');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1875568084" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1875568084"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-GllfTWiz').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-GllfTWiz" class="display compact"><thead><tr><th>IPAddress</th><th>ReorderedIPAddress</th><th>EnableReordering</th><th>Timeout</th><th>UseRootHint</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.1</td><td>192.168.240.1</td><td>True</td><td>3</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerForwarder</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerGlobalNameZone" style="color: #ffffff;">ServerGlobalNameZone</a>
+<a id="show_976644929" href="javascript:void(0)" onclick="show('976644929');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_976644929" href="javascript:void(0)" onclick="hide('976644929');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="976644929" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="976644929"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-KOVLiXyG').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-KOVLiXyG" class="display compact"><thead><tr><th>AlwaysQueryServer</th><th>BlockUpdates</th><th>Enable</th><th>EnableEDnsProbes</th><th>GlobalOverLocal</th><th>PreferAaaa</th><th>SendTimeout</th><th>ServerQueryInterval</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>False</td><td>True</td><td>False</td><td>True</td><td>False</td><td>False</td><td>3</td><td>06:00:00</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerGlobalNameZone</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerGlobalQueryBlockList" style="color: #ffffff;">ServerGlobalQueryBlockList</a>
+<a id="show_2008993806" href="javascript:void(0)" onclick="show('2008993806');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_2008993806" href="javascript:void(0)" onclick="hide('2008993806');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="2008993806" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="2008993806"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-jAveOZXV').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-jAveOZXV" class="display compact"><thead><tr><th>Enable</th><th>List</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>True</td><td>System.String[]</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerGlobalQueryBlockList</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRecursion" style="color: #ffffff;">ServerRecursion</a>
+<a id="show_895152776" href="javascript:void(0)" onclick="show('895152776');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_895152776" href="javascript:void(0)" onclick="hide('895152776');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="895152776" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="895152776"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-CuVrmATB').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-CuVrmATB" class="display compact"><thead><tr><th>AdditionalTimeout</th><th>Enable</th><th>RetryInterval</th><th>SecureResponse</th><th>Timeout</th><th>ComputerName</th></tr></thead>
+<tbody><tr><td>4</td><td>True</td><td>3</td><td>True</td><td>8</td><td>AD1.AD.EVOTEC.XYZ</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRecursionScopes" style="color: #ffffff;">ServerRecursionScopes</a>
+<a id="show_249585635" href="javascript:void(0)" onclick="show('249585635');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_249585635" href="javascript:void(0)" onclick="hide('249585635');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="249585635" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="249585635"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-CylDQUkw').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-CylDQUkw" class="display compact"><thead><tr><th>Forwarder</th><th>EnableRecursion</th><th>Name</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.1</td><td>True</td><td>.</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerRecursionScope</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerResponseRateLimiting" style="color: #ffffff;">ServerResponseRateLimiting</a>
+<a id="show_398687577" href="javascript:void(0)" onclick="show('398687577');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_398687577" href="javascript:void(0)" onclick="hide('398687577');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="398687577" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="398687577"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-ZHaAYDtz').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-ZHaAYDtz" class="display compact"><thead><tr><th>ErrorsPerSec</th><th>IPv4PrefixLength</th><th>IPv6PrefixLength</th><th>LeakRate</th><th>MaximumResponsesPerWindow</th><th>Mode</th><th>ResponsesPerSec</th><th>TruncateRate</th><th>WindowInSec</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>5</td><td>24</td><td>56</td><td>3</td><td>1024</td><td>Disable</td><td>5</td><td>2</td><td>5</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerResponseRateLimiting</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerResponseRateLimitingExceptionlists" style="color: #ffffff;">ServerResponseRateLimitingExceptionlists</a>
+<a id="show_241782628" href="javascript:void(0)" onclick="show('241782628');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_241782628" href="javascript:void(0)" onclick="hide('241782628');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="241782628" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="241782628"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-anrlXkRN').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-anrlXkRN" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRootHint" style="color: #ffffff;">ServerRootHint</a>
+<a id="show_1575534508" href="javascript:void(0)" onclick="show('1575534508');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1575534508" href="javascript:void(0)" onclick="hide('1575534508');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1575534508" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1575534508"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-gsCFMIuf').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-gsCFMIuf" class="display compact"><thead><tr><th>DistinguishedName</th><th>HostName</th><th>RecordClass</th><th>IPv4Address</th><th>IPv6Address</th><th>RecordType</th><th>Timestamp</th><th>TimeToLive</th><th>Type</th><th>ComputerName</th></tr></thead>
+<tbody><tr><td>DC=m.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>m.root-servers.net.</td><td>IN</td><td>202.12.27.33</td><td></td><td>A</td><td></td><td>08:38:32</td><td>1</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=m.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>m.root-servers.net.</td><td>IN</td><td></td><td>2001:dc3::35</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=l.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>l.root-servers.net.</td><td>IN</td><td></td><td>2001:500:9f::42</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=k.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>k.root-servers.net.</td><td>IN</td><td></td><td>2001:7fd::1</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=j.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>j.root-servers.net.</td><td>IN</td><td></td><td>2001:503:c27::2:30</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=i.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>i.root-servers.net.</td><td>IN</td><td></td><td>2001:7fe::53</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=h.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>h.root-servers.net.</td><td>IN</td><td></td><td>2001:500:1::53</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=g.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>g.root-servers.net.</td><td>IN</td><td></td><td>2001:500:12::d0d</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=f.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>f.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2f::f</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=e.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>e.root-servers.net.</td><td>IN</td><td></td><td>2001:500:a8::e</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=d.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>d.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2d::d</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=c.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>c.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2::c</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=b.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>b.root-servers.net.</td><td>IN</td><td></td><td>2001:500:200::b</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=a.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>a.root-servers.net.</td><td>IN</td><td></td><td>2001:503:ba3e::2:30</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD1.AD.EVOTEC.XYZ</td></tr>
+</tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerScavenging" style="color: #ffffff;">ServerScavenging</a>
+<a id="show_1626355352" href="javascript:void(0)" onclick="show('1626355352');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1626355352" href="javascript:void(0)" onclick="hide('1626355352');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1626355352" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1626355352"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-NaPlcqpr').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-NaPlcqpr" class="display compact"><thead><tr><th>LastScavengeTime</th><th>NoRefreshInterval</th><th>RefreshInterval</th><th>ScavengingInterval</th><th>ScavengingState</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>7.00:00:00</td><td>7.00:00:00</td><td>00:00:00</td><td>False</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerScavenging</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerSetting" style="color: #ffffff;">ServerSetting</a>
+<a id="show_1110480987" href="javascript:void(0)" onclick="show('1110480987');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1110480987" href="javascript:void(0)" onclick="hide('1110480987');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1110480987" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1110480987"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-sPppkTlZ').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-sPppkTlZ" class="display compact"><thead><tr><th>AllIPAddress</th><th>ListeningIPAddress</th><th>BuildNumber</th><th>ComputerName</th><th>EnableDnsSec</th><th>EnableIPv6</th><th>IsReadOnlyDC</th><th>MajorVersion</th><th>MinorVersion</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.189</td><td>192.168.240.189</td><td>14393</td><td>AD1.ad.evotec.xyz</td><td>False</td><td>True</td><td>False</td><td>10</td><td>0</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerSettingBrief</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="VirtualizedServer" style="color: #ffffff;">VirtualizedServer</a>
+<a id="show_1600264366" href="javascript:void(0)" onclick="show('1600264366');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1600264366" href="javascript:void(0)" onclick="hide('1600264366');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1600264366" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1600264366"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-QNMlpyzJ').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-QNMlpyzJ" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="VirtualizationInstance" style="color: #ffffff;">VirtualizationInstance</a>
+<a id="show_965760472" href="javascript:void(0)" onclick="show('965760472');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_965760472" href="javascript:void(0)" onclick="hide('965760472');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="965760472" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="965760472"><script>                $(document).ready(function() {
+                    
+                    
+                    //  Table code
+                    var table = $('#DT-NWZKlyAd').DataTable(
+                        {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                    );
+                    
+                });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-NWZKlyAd" class="display compact"><thead><tr><th>Description</th><th>FriendlyName</th><th>VirtualizationInstance</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>Default</td><td>.</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerVirtualizationInstance</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+</div>
+<div id="Tab-1c4jpsdf" class="tabs-content"><div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerCache" style="color: #ffffff;">ServerCache</a>
+<a id="show_1444682349" href="javascript:void(0)" onclick="show('1444682349');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1444682349" href="javascript:void(0)" onclick="hide('1444682349');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1444682349" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1444682349"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-YpQGhWeo")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-YpQGhWeo').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-YpQGhWeo" class="display compact"><thead><tr><th>DistinguishedName</th><th>IsAutoCreated</th><th>IsDsIntegrated</th><th>IsPaused</th><th>IsReadOnly</th><th>IsReverseLookupZone</th><th>IsShutdown</th><th>ZoneName</th><th>ZoneType</th><th>EnablePollutionProtection</th><th>IgnorePolicies</th><th>LockingPercent</th><th>MaxKBSize</th><th>MaxNegativeTtl</th><th>MaxTtl</th><th>StoreEmptyAuthenticationResponse</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>False</td><td>True</td><td>False</td><td>False</td><td>False</td><td>False</td><td>.</td><td>Cache</td><td>True</td><td>False</td><td>100</td><td>0</td><td>00:15:00</td><td>1.00:00:00</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerCache</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerClientSubnets" style="color: #ffffff;">ServerClientSubnets</a>
+<a id="show_905825189" href="javascript:void(0)" onclick="show('905825189');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_905825189" href="javascript:void(0)" onclick="hide('905825189');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="905825189" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="905825189"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-rznEoKaW")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-rznEoKaW').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-rznEoKaW" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDiagnostics" style="color: #ffffff;">ServerDiagnostics</a>
+<a id="show_1623768245" href="javascript:void(0)" onclick="show('1623768245');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1623768245" href="javascript:void(0)" onclick="hide('1623768245');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1623768245" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1623768245"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-NdmuRkXQ")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-NdmuRkXQ').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-NdmuRkXQ" class="display compact"><thead><tr><th>FilterIPAddressList</th><th>Answers</th><th>EnableLogFileRollover</th><th>EnableLoggingForLocalLookupEvent</th><th>EnableLoggingForPluginDllEvent</th><th>EnableLoggingForRecursiveLookupEvent</th><th>EnableLoggingForRemoteServerEvent</th><th>EnableLoggingForServerStartStopEvent</th><th>EnableLoggingForTombstoneEvent</th><th>EnableLoggingForZoneDataWriteEvent</th><th>EnableLoggingForZoneLoadingEvent</th><th>EnableLoggingToFile</th><th>EventLogLevel</th><th>FullPackets</th><th>LogFilePath</th><th>MaxMBFileSize</th><th>Notifications</th><th>Queries</th><th>QuestionTransactions</th><th>ReceivePackets</th><th>SaveLogsToPersistentStorage</th><th>SendPackets</th><th>TcpPackets</th><th>UdpPackets</th><th>UnmatchedResponse</th><th>Update</th><th>UseSystemEventLog</th><th>WriteThrough</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>True</td><td>4</td><td>False</td><td></td><td>500000000</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td>False</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDiagnostics</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDirectoryPartition" style="color: #ffffff;">ServerDirectoryPartition</a>
+<a id="show_73961898" href="javascript:void(0)" onclick="show('73961898');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_73961898" href="javascript:void(0)" onclick="hide('73961898');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="73961898" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="73961898"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-ZrApzTDv")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-ZrApzTDv').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-ZrApzTDv" class="display compact"><thead><tr><th>CrossReferenceDistinguishedName</th><th>DirectoryPartitionDistinguishedName</th><th>DirectoryPartitionName</th><th>Flags</th><th>Replica</th><th>State</th><th>ZoneCount</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td></td><td>DomainDnsZones.ad.evotec.pl</td><td>Not-Enlisted </td><td></td><td></td><td>0</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+<tr><td>CN=6c26e666-69ed-40bf-97ce-7f8ade04ae05,CN=Partitions,CN=Configuration,DC=ad,DC=evotec,DC=xyz</td><td>DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>DomainDnsZones.ad.evotec.xyz</td><td>Enlisted Auto Domain </td><td>System.String[]</td><td>0</td><td>3</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+<tr><td>CN=b8090d87-27f0-490f-979e-29b4221d7986,CN=Partitions,CN=Configuration,DC=ad,DC=evotec,DC=xyz</td><td>DC=ForestDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>ForestDnsZones.ad.evotec.xyz</td><td>Enlisted Auto Forest </td><td>System.String[]</td><td>0</td><td>3</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDirectoryPartition</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr>
+</tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerDsSetting" style="color: #ffffff;">ServerDsSetting</a>
+<a id="show_1358921267" href="javascript:void(0)" onclick="show('1358921267');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1358921267" href="javascript:void(0)" onclick="hide('1358921267');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1358921267" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1358921267"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-tUDUJYCz")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-tUDUJYCz').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-tUDUJYCz" class="display compact"><thead><tr><th>DirectoryPartitionAutoEnlistInterval</th><th>LazyUpdateInterval</th><th>MinimumBackgroundLoadThreads</th><th>PollingInterval</th><th>RemoteReplicationDelay</th><th>TombstoneInterval</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>1.00:00:00</td><td>3</td><td>1</td><td>180</td><td>30</td><td>14.00:00:00</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerDsSetting</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerEdns" style="color: #ffffff;">ServerEdns</a>
+<a id="show_141063220" href="javascript:void(0)" onclick="show('141063220');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_141063220" href="javascript:void(0)" onclick="hide('141063220');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="141063220" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="141063220"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-HHnrrYtQ")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-HHnrrYtQ').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-HHnrrYtQ" class="display compact"><thead><tr><th>CacheTimeout</th><th>EnableProbes</th><th>EnableReception</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>00:15:00</td><td>True</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerEDns</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerForwarder" style="color: #ffffff;">ServerForwarder</a>
+<a id="show_1580983474" href="javascript:void(0)" onclick="show('1580983474');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1580983474" href="javascript:void(0)" onclick="hide('1580983474');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1580983474" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1580983474"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-bUzjEYCi")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-bUzjEYCi').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-bUzjEYCi" class="display compact"><thead><tr><th>IPAddress</th><th>ReorderedIPAddress</th><th>EnableReordering</th><th>Timeout</th><th>UseRootHint</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.1</td><td>192.168.240.1</td><td>True</td><td>3</td><td>True</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerForwarder</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerGlobalNameZone" style="color: #ffffff;">ServerGlobalNameZone</a>
+<a id="show_955468969" href="javascript:void(0)" onclick="show('955468969');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_955468969" href="javascript:void(0)" onclick="hide('955468969');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="955468969" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="955468969"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-TKrTfIxz")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-TKrTfIxz').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-TKrTfIxz" class="display compact"><thead><tr><th>AlwaysQueryServer</th><th>BlockUpdates</th><th>Enable</th><th>EnableEDnsProbes</th><th>GlobalOverLocal</th><th>PreferAaaa</th><th>SendTimeout</th><th>ServerQueryInterval</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>False</td><td>True</td><td>False</td><td>True</td><td>False</td><td>False</td><td>3</td><td>06:00:00</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerGlobalNameZone</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerGlobalQueryBlockList" style="color: #ffffff;">ServerGlobalQueryBlockList</a>
+<a id="show_1125918088" href="javascript:void(0)" onclick="show('1125918088');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1125918088" href="javascript:void(0)" onclick="hide('1125918088');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1125918088" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1125918088"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-UjEfgtJt")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-UjEfgtJt').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-UjEfgtJt" class="display compact"><thead><tr><th>Enable</th><th>List</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>True</td><td>System.String[]</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerGlobalQueryBlockList</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRecursion" style="color: #ffffff;">ServerRecursion</a>
+<a id="show_630447743" href="javascript:void(0)" onclick="show('630447743');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_630447743" href="javascript:void(0)" onclick="hide('630447743');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="630447743" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="630447743"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-aYRKlVxW")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-aYRKlVxW').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-aYRKlVxW" class="display compact"><thead><tr><th>AdditionalTimeout</th><th>Enable</th><th>RetryInterval</th><th>SecureResponse</th><th>Timeout</th><th>ComputerName</th></tr></thead>
+<tbody><tr><td>4</td><td>True</td><td>3</td><td>True</td><td>8</td><td>AD2.AD.EVOTEC.XYZ</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRecursionScopes" style="color: #ffffff;">ServerRecursionScopes</a>
+<a id="show_1524053162" href="javascript:void(0)" onclick="show('1524053162');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1524053162" href="javascript:void(0)" onclick="hide('1524053162');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1524053162" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1524053162"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-rVLbabxe")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-rVLbabxe').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-rVLbabxe" class="display compact"><thead><tr><th>Forwarder</th><th>EnableRecursion</th><th>Name</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.1</td><td>True</td><td>.</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerRecursionScope</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerResponseRateLimiting" style="color: #ffffff;">ServerResponseRateLimiting</a>
+<a id="show_737904796" href="javascript:void(0)" onclick="show('737904796');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_737904796" href="javascript:void(0)" onclick="hide('737904796');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="737904796" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="737904796"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-XSUPfiwq")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-XSUPfiwq').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-XSUPfiwq" class="display compact"><thead><tr><th>ErrorsPerSec</th><th>IPv4PrefixLength</th><th>IPv6PrefixLength</th><th>LeakRate</th><th>MaximumResponsesPerWindow</th><th>Mode</th><th>ResponsesPerSec</th><th>TruncateRate</th><th>WindowInSec</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>5</td><td>24</td><td>56</td><td>3</td><td>1024</td><td>Disable</td><td>5</td><td>2</td><td>5</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerResponseRateLimiting</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerResponseRateLimitingExceptionlists" style="color: #ffffff;">ServerResponseRateLimitingExceptionlists</a>
+<a id="show_1762637493" href="javascript:void(0)" onclick="show('1762637493');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1762637493" href="javascript:void(0)" onclick="hide('1762637493');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1762637493" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1762637493"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-KdBaZIZr")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-KdBaZIZr').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-KdBaZIZr" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerRootHint" style="color: #ffffff;">ServerRootHint</a>
+<a id="show_598135192" href="javascript:void(0)" onclick="show('598135192');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_598135192" href="javascript:void(0)" onclick="hide('598135192');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="598135192" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="598135192"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-RyucrkzR")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-RyucrkzR').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-RyucrkzR" class="display compact"><thead><tr><th>DistinguishedName</th><th>HostName</th><th>RecordClass</th><th>IPv4Address</th><th>IPv6Address</th><th>RecordType</th><th>Timestamp</th><th>TimeToLive</th><th>Type</th><th>ComputerName</th></tr></thead>
+<tbody><tr><td>DC=m.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>m.root-servers.net.</td><td>IN</td><td>202.12.27.33</td><td></td><td>A</td><td></td><td>10:14:24</td><td>1</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=m.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>m.root-servers.net.</td><td>IN</td><td></td><td>2001:dc3::35</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=l.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>l.root-servers.net.</td><td>IN</td><td></td><td>2001:500:9f::42</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=k.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>k.root-servers.net.</td><td>IN</td><td></td><td>2001:7fd::1</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=j.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>j.root-servers.net.</td><td>IN</td><td></td><td>2001:503:c27::2:30</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=i.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>i.root-servers.net.</td><td>IN</td><td></td><td>2001:7fe::53</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=h.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>h.root-servers.net.</td><td>IN</td><td></td><td>2001:500:1::53</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=g.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>g.root-servers.net.</td><td>IN</td><td></td><td>2001:500:12::d0d</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=f.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>f.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2f::f</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=e.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>e.root-servers.net.</td><td>IN</td><td></td><td>2001:500:a8::e</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=d.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>d.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2d::d</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=c.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>c.root-servers.net.</td><td>IN</td><td></td><td>2001:500:2::c</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=b.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>b.root-servers.net.</td><td>IN</td><td></td><td>2001:500:200::b</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+<tr><td>DC=a.root-servers.net.,DC=RootDNSServers,cn=MicrosoftDNS,DC=DomainDnsZones,DC=ad,DC=evotec,DC=xyz</td><td>a.root-servers.net.</td><td>IN</td><td></td><td>2001:503:ba3e::2:30</td><td>AAAA</td><td></td><td>00:00:00</td><td>28</td><td>AD2.AD.EVOTEC.XYZ</td></tr>
+</tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerScavenging" style="color: #ffffff;">ServerScavenging</a>
+<a id="show_917851531" href="javascript:void(0)" onclick="show('917851531');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_917851531" href="javascript:void(0)" onclick="hide('917851531');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="917851531" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="917851531"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-URNwVyfg")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-URNwVyfg').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-URNwVyfg" class="display compact"><thead><tr><th>LastScavengeTime</th><th>NoRefreshInterval</th><th>RefreshInterval</th><th>ScavengingInterval</th><th>ScavengingState</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>7.00:00:00</td><td>7.00:00:00</td><td>00:00:00</td><td>False</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerScavenging</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="ServerSetting" style="color: #ffffff;">ServerSetting</a>
+<a id="show_2016884076" href="javascript:void(0)" onclick="show('2016884076');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_2016884076" href="javascript:void(0)" onclick="hide('2016884076');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="2016884076" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="2016884076"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-bmHwQgYg")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-bmHwQgYg').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-bmHwQgYg" class="display compact"><thead><tr><th>AllIPAddress</th><th>ListeningIPAddress</th><th>BuildNumber</th><th>ComputerName</th><th>EnableDnsSec</th><th>EnableIPv6</th><th>IsReadOnlyDC</th><th>MajorVersion</th><th>MinorVersion</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td>192.168.240.192</td><td>192.168.240.192</td><td>14393</td><td>AD2.ad.evotec.xyz</td><td>True</td><td>True</td><td>False</td><td>10</td><td>0</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerSettingBrief</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="VirtualizedServer" style="color: #ffffff;">VirtualizedServer</a>
+<a id="show_476067834" href="javascript:void(0)" onclick="show('476067834');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_476067834" href="javascript:void(0)" onclick="hide('476067834');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="476067834" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="476067834"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-ILvUypJo")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-ILvUypJo').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-ILvUypJo" class="display compact"><thead><tr><th>*</th></tr></thead>
+<tbody><tr><td>No data available.</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+<div class="defaultSection defaultCard"><div class="defaultHeader" style="text-align:center;background-color:#00bfff"><a name="VirtualizationInstance" style="color: #ffffff;">VirtualizationInstance</a>
+<a id="show_1125752846" href="javascript:void(0)" onclick="show('1125752846');" style="color: #ffffff; display:none;">(Show)</a>
+<a id="hide_1125752846" href="javascript:void(0)" onclick="hide('1125752846');" style="color: #ffffff; display:none;">(Hide)</a>
+</div>
+<div id="1125752846" class="defaultContainerOther"><div class="defaultContainer defaultPanelOther collapsable" id="1125752846"><script>                    $(document).ready(function() {
+                        $('.tabs').on('click', 'a', function (event) {
+                            if ($(event.currentTarget).attr("data-id") == "Tab-1c4jpsdf" && !$.fn.dataTable.isDataTable("#DT-bxvOAoDG")) {
+                                
+                                
+                                //  Table code
+                                var table = $('#DT-bxvOAoDG').DataTable(
+                                    {
+    "dom":  "Bfrtip",
+    "buttons":  [
+                    "copyHtml5",
+                    "excelHtml5",
+                    "csvHtml5",
+                    "pdfHtml5"
+                ],
+    "colReorder":  true,
+    "paging":  true,
+    "scrollCollapse":  false,
+    "pagingType":  [
+                       "full_numbers"
+                   ],
+    "lengthMenu":  [
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       -1,
+                       [
+                           15,
+                           25,
+                           50,
+                           100
+                       ],
+                       "All"
+                   ],
+    "ordering":  true,
+    "order":  [
+
+              ],
+    "info":  true,
+    "procesing":  true,
+    "responsive":  {
+                       "details":  true
+                   },
+    "select":  true,
+    "searching":  true,
+    "stateSave":  true
+}
+                                );
+                                
+                            };
+                        });
+                    });</script>
+<div class="defaultPanelOther">
+
+<table id="DT-bxvOAoDG" class="display compact"><thead><tr><th>Description</th><th>FriendlyName</th><th>VirtualizationInstance</th><th>PSComputerName</th><th>CimClass</th><th>CimInstanceProperties</th><th>CimSystemProperties</th></tr></thead>
+<tbody><tr><td></td><td>Default</td><td>.</td><td></td><td>root/Microsoft/Windows/DNS:DnsServerVirtualizationInstance</td><td>Microsoft.Management.Infrastructure.Internal.Data.CimPropertiesCollection</td><td>Microsoft.Management.Infrastructure.CimSystemProperties</td></tr></tbody>
+</table>
+
+</div>
+</div></div>
+</div>
+</div>
+</body>
+<!-- END BODY -->
+<!-- FOOTER -->
+<footer>
+
+
+
+<!-- JS Elastic Tabs START -->
+<script type="text/javascript">var maxWidth = 0;
+var $element;
+
+$(window).on("resize", function() {
+    $(".selector").hide();
+    var activeItem = $(".tabs a[class*='active']");
+    var id = activeItem.data("id");
+    setSelectorPosition(id);
+});
+
+// Set first active link
+var activeItem = $(".tabs a[class*='active']");
+var id = activeItem.data("id");
+setSelectorPosition(id);
+
+$(".tabs").on("click", "a", function(e) {
+    e.preventDefault();
+    $(".tabs a").removeClass("active");
+    $(this).addClass("active");
+
+    // Get id of link clicked
+    var id = $(this).data("id");
+
+    // Set selector position
+    setSelectorPosition(id);
+
+    // Hide all tabs
+    $(".tabs-content").hide();
+
+    // Show current tab
+    $("#" + id).show();
+});
+
+function setSelectorPosition(id) {
+    var activeItem = $(".tabs").find("[data-id='" + id + "']");
+    var activeWidth = activeItem.innerWidth();
+    var itemPos = activeItem.position();
+    $(".selector").css({
+        left: itemPos.left + "px",
+        top: itemPos.top + "px",
+        width: activeItem.innerWidth() + "px",
+        height: activeItem.innerHeight() + "px"
+    });
+    $(".selector").show();
+}
+</script>
+<!-- JS Elastic Tabs END -->
+
+</footer>
+<!-- END FOOTER -->
+</html>
