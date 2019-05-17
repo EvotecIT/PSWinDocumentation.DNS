@@ -1,6 +1,7 @@
 ﻿function Get-WinDNSInformation {
     param(
-        [string[]] $ComputerName
+        [string[]] $ComputerName,
+        [string] $Splitter
     )
     if ($null -eq $TypesRequired) {
         #Write-Verbose 'Get-WinADDomainInformation - TypesRequired is null. Getting all.'
@@ -17,24 +18,22 @@
         #
         #}
         $Data = [ordered] @{}
-        $Data.ServerCache = Get-DnsServerCache  -ComputerName $Computer
-        $Data.ServerClientSubnets = Get-DnsServerClientSubnet  -ComputerName $Computer
-        $Data.ServerDiagnostics = Get-DnsServerDiagnostics  -ComputerName $Computer
-        $Data.ServerDirectoryPartition = Get-DnsServerDirectoryPartition -ComputerName $Computer
-        $Data.ServerDsSetting = Get-DnsServerDsSetting -ComputerName $Computer
-        $Data.ServerEdns = Get-DnsServerEDns -ComputerName $Computer
-        $Data.ServerForwarder = Get-DnsServerForwarder -ComputerName $Computer
-        $Data.ServerGlobalNameZone = Get-DnsServerGlobalNameZone -ComputerName $Computer
-        $Data.ServerGlobalQueryBlockList = Get-WinDnsServerGlobalQueryBlockList -ComputerName $Computer
+        $Data.ServerCache = Get-WinDnsServerCache -ComputerName $Computer
+        $Data.ServerClientSubnets = Get-DnsServerClientSubnet  -ComputerName $Computer # TODO
+        $Data.ServerDiagnostics = Get-WinDnsServerDiagnostics -ComputerName $Computer
+        $Data.ServerDirectoryPartition = Get-WinDnsServerDirectoryPartition -ComputerName $Computer -Splitter $Splitter
+        $Data.ServerDsSetting = Get-WinDnsServerDsSetting -ComputerName $Computer
+        $Data.ServerEdns = Get-WinDnsServerEDns -ComputerName $Computer
+        $Data.ServerForwarder = Get-WinDnsServerForwarder -ComputerName $Computer
+        $Data.ServerGlobalNameZone = Get-WinDnsServerGlobalNameZone -ComputerName $Computer
+        $Data.ServerGlobalQueryBlockList = Get-WinDnsServerGlobalQueryBlockList -ComputerName $Computer -Splitter $Splitter
         # $Data.ServerPolicies = $DNSServer.ServerPolicies
-
-
-        $Data.ServerRecursion = Get-WinDnsServerRecursion -ComputerName $Computer #DONE
+        $Data.ServerRecursion = Get-WinDnsServerRecursion -ComputerName $Computer
 
         $Data.ServerRecursionScopes = Get-WinDnsServerRecursionScope -ComputerName $Computer
-        $Data.ServerResponseRateLimiting = Get-DnsServerResponseRateLimiting -ComputerName $Computer
-        $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Computer
-        $Data.ServerRootHint = Get-WinDnsRootHint -ComputerName $Computer # DONE
+        $Data.ServerResponseRateLimiting = Get-WinDnsServerResponseRateLimiting -ComputerName $Computer
+        $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Computer # TODO
+        $Data.ServerRootHint = Get-WinDnsRootHint -ComputerName $Computer
         $Data.ServerScavenging = Get-WinDnsServerScavenging -ComputerName $Computer
         $Data.ServerSetting = Get-WinDnsServerSettings -ComputerName $Computer
         # $Data.ServerZone = Get-DnsServerZone -ComputerName $Computer # problem
@@ -42,7 +41,7 @@
         # $Data.ServerZoneScope = Get-DnsServerZoneScope -ComputerName $Computer # problem
         # $Data.ServerDnsSecZoneSetting = Get-DnsServerDnsSecZoneSetting -ComputerName $Computer # problem
         $Data.VirtualizedServer = $DNSServer.VirtualizedServer
-        $Data.VirtualizationInstance = Get-DnsServerVirtualizationInstance -ComputerName $Computer
+        $Data.VirtualizationInstance = Get-WinDnsServerVirtualizationInstance -ComputerName $Computer
         $DNSServers.$Computer = $Data
     }
     return $DNSServers
