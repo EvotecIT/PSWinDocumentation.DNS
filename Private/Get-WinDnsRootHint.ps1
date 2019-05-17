@@ -1,5 +1,6 @@
 ﻿function Get-WinDnsRootHint {
     [CmdLetBinding()]
+
     param(
         [string] $ComputerName
     )

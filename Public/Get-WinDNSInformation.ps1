@@ -31,11 +31,11 @@
 
         $Data.ServerRecursion = Get-WinDnsServerRecursion -ComputerName $Computer #DONE
 
-        $Data.ServerRecursionScopes = Get-DnsServerRecursionScope -ComputerName $Computer
+        $Data.ServerRecursionScopes = Get-WinDnsServerRecursionScope -ComputerName $Computer
         $Data.ServerResponseRateLimiting = Get-DnsServerResponseRateLimiting -ComputerName $Computer
-        $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Compute
+        $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Computer
         $Data.ServerRootHint = Get-WinDnsRootHint -ComputerName $Computer # DONE
-        $Data.ServerScavenging = Get-DnsServerScavenging -ComputerName $Computer
+        $Data.ServerScavenging = Get-WinDnsServerScavenging -ComputerName $Computer
         $Data.ServerSetting = Get-DnsServerSetting -ComputerName $Computer
         # $Data.ServerZone = Get-DnsServerZone -ComputerName $Computer # problem
         # $Data.ServerZoneAging = Get-DnsServerZoneAging -ComputerName $Computer # problem
