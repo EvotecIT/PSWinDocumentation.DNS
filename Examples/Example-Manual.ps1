@@ -1,10 +1,6 @@
 ﻿Import-Module .\PSWinDocumentation.DNS.psd1 -Force
 
 $DNS = Get-WinDNSInformation -ComputerName 'AD1.AD.EVOTEC.XYZ', 'AD2.AD.EVOTEC.XYZ' -Splitter "`r`n"
-#$DNS.'AD1.AD.EVOTEC.XYZ'.ServerRootHin
-#$DNS.'AD1.AD.EVOTEC.XYZ'.ServerDirectoryPartition
-
-
 
 Dashboard -FilePath "$PSScriptRoot\Example-Manual.html" {
     foreach ($Server in $DNS.Keys) {

@@ -12,7 +12,7 @@
     RootModule = 'PSWinDocumentation.DNS.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.0.1'
+    ModuleVersion = '0.0.2'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -30,7 +30,7 @@
     Copyright = 'Evotec (c) 2011-2019. All rights reserved.'
 
     # Description of the functionality provided by this module
-    Description = 'Dataset covering Active Directory'
+    Description = 'Dataset covering DNS'
 
     # Minimum version of the Windows PowerShell engine required by this module
     PowerShellVersion = '5.1'
@@ -51,7 +51,7 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules = @(@{ModuleName = 'PSSharedGoods'; GUID = 'ee272aa8-baaa-4edf-9f45-b6d6f7d844fe'; ModuleVersion = '0.0.78'; })
+    RequiredModules = @(@{ModuleName = 'PSSharedGoods'; GUID = 'ee272aa8-baaa-4edf-9f45-b6d6f7d844fe'; ModuleVersion = '0.0.76'; })
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
