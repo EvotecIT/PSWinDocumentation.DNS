@@ -12,7 +12,7 @@
             RetryInterval     = $_.RetryInterval
             SecureResponse    = $_.SecureResponse
             Timeout           = $_.Timeout
-            ComputerName      = $ComputerName
+            GatheredFrom      = $ComputerName
         }
     }
 }

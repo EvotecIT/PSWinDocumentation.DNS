@@ -19,14 +19,7 @@
             Timestamp         = $_.Timestamp
             TimeToLive        = $_.TimeToLive
             Type              = $_.Type
-            ComputerName      = $ComputerName
+            GatheredFrom      = $ComputerName
         }
     }
-
-
 }
-
-
-#$O = Get-WinDnsRootHint -ComputerName 'AD2.AD.EVOTEC.XYZ'
-#$O | ft -AutoSize
-#return

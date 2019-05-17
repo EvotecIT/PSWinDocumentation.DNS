@@ -11,7 +11,7 @@
             Name            = $_.Name
             Forwarder       = $_.Forwarder
             EnableRecursion = $_.EnableRecursion
-            ComputerName    = $ComputerName
+            GatheredFrom    = $ComputerName
         }
     }
 }

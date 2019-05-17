@@ -13,7 +13,7 @@
             ScavengingInterval = $_.ScavengingInterval
             ScavengingState    = $_.ScavengingState
             LastScavengeTime   = $_.LastScavengeTime
-            ComputerName       = $ComputerName
+            GatheredFrom       = $ComputerName
         }
     }
 }

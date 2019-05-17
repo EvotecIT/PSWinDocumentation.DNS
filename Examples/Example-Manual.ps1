@@ -2,8 +2,10 @@
 
 $DNS = Get-WinDNSInformation -ComputerName 'AD1.AD.EVOTEC.XYZ', 'AD2.AD.EVOTEC.XYZ'
 #$DNS.'AD1.AD.EVOTEC.XYZ'.ServerRootHint
-$DNS.'AD1.AD.EVOTEC.XYZ'.ServerRecursion | fl *
+$DNS.'AD1.AD.EVOTEC.XYZ'.ServerGlobalQueryBlockList | fl *
 
+
+return
 
 Dashboard -FilePath "$PSScriptRoot\Example-Manual.html" {
     foreach ($Server in $DNS.Keys) {

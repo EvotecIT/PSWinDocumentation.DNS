@@ -25,7 +25,7 @@
         $Data.ServerEdns = Get-DnsServerEDns -ComputerName $Computer
         $Data.ServerForwarder = Get-DnsServerForwarder -ComputerName $Computer
         $Data.ServerGlobalNameZone = Get-DnsServerGlobalNameZone -ComputerName $Computer
-        $Data.ServerGlobalQueryBlockList = Get-DnsServerGlobalQueryBlockList -ComputerName $Computer
+        $Data.ServerGlobalQueryBlockList = Get-WinDnsServerGlobalQueryBlockList -ComputerName $Computer
         # $Data.ServerPolicies = $DNSServer.ServerPolicies
 
 
@@ -36,7 +36,7 @@
         $Data.ServerResponseRateLimitingExceptionlists = Get-DnsServerResponseRateLimitingExceptionlist -ComputerName $Computer
         $Data.ServerRootHint = Get-WinDnsRootHint -ComputerName $Computer # DONE
         $Data.ServerScavenging = Get-WinDnsServerScavenging -ComputerName $Computer
-        $Data.ServerSetting = Get-DnsServerSetting -ComputerName $Computer
+        $Data.ServerSetting = Get-WinDnsServerSettings -ComputerName $Computer
         # $Data.ServerZone = Get-DnsServerZone -ComputerName $Computer # problem
         # $Data.ServerZoneAging = Get-DnsServerZoneAging -ComputerName $Computer # problem
         # $Data.ServerZoneScope = Get-DnsServerZoneScope -ComputerName $Computer # problem
