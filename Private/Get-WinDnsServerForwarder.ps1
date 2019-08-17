@@ -10,7 +10,13 @@
         $ComputerName = (Get-ADDomainController -Filter * -Server $Domain).HostName
     }
     foreach ($Computer in $ComputerName) {
-        $DnsServerForwarder = Get-DnsServerForwarder -ComputerName $Computer
+        try {
+            $DnsServerForwarder = Get-DnsServerForwarder -ComputerName $Computer -ErrorAction Stop
+        } catch {
+            $ErrorMessage = $_.Exception.Message -replace "`n", " " -replace "`r", " "
+            Write-Warning "Get-WinDnsServerForwarder - Error $ErrorMessage"
+            continue
+        }
         foreach ($_ in $DnsServerForwarder) {
             if ($Formatted) {
                 [PSCustomObject] @{
