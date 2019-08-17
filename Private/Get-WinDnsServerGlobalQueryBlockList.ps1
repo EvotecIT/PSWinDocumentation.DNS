@@ -1,15 +1,30 @@
 ﻿function Get-WinDnsServerGlobalQueryBlockList {
     [CmdLetBinding()]
     param(
-        [string] $ComputerName,
-        [string] $Splitter
+        [string[]] $ComputerName,
+        [string] $Domain = $ENV:USERDNSDOMAIN,
+        [switch] $Formatted,
+        [string] $Splitter = ', '
     )
-    $ServerGlobalQueryBlockList = Get-DnsServerGlobalQueryBlockList -ComputerName $ComputerName
-    foreach ($_ in $ServerGlobalQueryBlockList) {
-        [PSCustomObject] @{
-            Enable       = $_.Enable
-            List         = if ($Splitter -ne '') { $_.List -join $Splitter } else { $_.List }
-            GatheredFrom = $ComputerName
+    if ($Domain -and -not $ComputerName) {
+        $ComputerName = (Get-ADDomainController -Filter * -Server $Domain).HostName
+    }
+    foreach ($Computer in $ComputerName) {
+        $ServerGlobalQueryBlockList = Get-DnsServerGlobalQueryBlockList -ComputerName $Computer
+        foreach ($_ in $ServerGlobalQueryBlockList) {
+            if ($Formatted) {
+                [PSCustomObject] @{
+                    Enable       = $_.Enable
+                    List         = $_.List -join $Splitter
+                    GatheredFrom = $Computer
+                }
+            } else {
+                [PSCustomObject] @{
+                    Enable       = $_.Enable
+                    List         = $_.List
+                    GatheredFrom = $Computer
+                }
+            }
         }
     }
 }
