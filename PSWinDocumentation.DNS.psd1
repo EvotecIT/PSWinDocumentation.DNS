@@ -12,7 +12,7 @@
     RootModule = 'PSWinDocumentation.DNS.psm1'
 
     # Version number of this module.
-    ModuleVersion = '0.0.6'
+    ModuleVersion = '0.0.7'
 
     # Supported PSEditions
     # CompatiblePSEditions = @()
@@ -51,7 +51,7 @@
     # ProcessorArchitecture = ''
 
     # Modules that must be imported into the global environment prior to importing this module
-    RequiredModules = @(@{ModuleName = 'PSSharedGoods'; GUID = 'ee272aa8-baaa-4edf-9f45-b6d6f7d844fe'; RequiredVersion = '0.0.87'; })
+    RequiredModules = @(@{ModuleName = 'PSSharedGoods'; GUID = 'ee272aa8-baaa-4edf-9f45-b6d6f7d844fe'; ModuleVersion = '0.0.88'; })
 
     # Assemblies that must be loaded prior to importing this module
     # RequiredAssemblies = @()
