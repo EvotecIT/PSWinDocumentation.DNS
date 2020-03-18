@@ -1,15 +1,17 @@
 ﻿function Get-WinDnsServerForwarder {
     [CmdLetBinding()]
     param(
-        [string[]] $ComputerName,
-        [string] $Domain = $ENV:USERDNSDOMAIN,
+        [alias('ForestName')][string] $Forest,
+        [string[]] $ExcludeDomains,
+        [string[]] $ExcludeDomainControllers,
+        [alias('Domain', 'Domains')][string[]] $IncludeDomains,
+        [alias('DomainControllers', 'ComputerName')][string[]] $IncludeDomainControllers,
         [switch] $Formatted,
-        [string] $Splitter = ', '
+        [string] $Splitter = ', ',
+        [System.Collections.IDictionary] $ExtendedForestInformation
     )
-    if ($Domain -and -not $ComputerName) {
-        $ComputerName = (Get-ADDomainController -Filter * -Server $Domain).HostName
-    }
-    foreach ($Computer in $ComputerName) {
+    $ForestInformation = Get-WinADForestDetails -Forest $Forest -IncludeDomains $IncludeDomains -ExcludeDomains $ExcludeDomains -ExcludeDomainControllers $ExcludeDomainControllers -IncludeDomainControllers $IncludeDomainControllers -SkipRODC:$SkipRODC -ExtendedForestInformation $ExtendedForestInformation
+    foreach ($Computer in $ForestInformation.ForestDomainControllers.HostName) {
         try {
             $DnsServerForwarder = Get-DnsServerForwarder -ComputerName $Computer -ErrorAction Stop
         } catch {
