@@ -27,6 +27,7 @@
                     EnableReordering   = $_.EnableReordering
                     Timeout            = $_.Timeout
                     UseRootHint        = $_.UseRootHint
+                    ForwardersCount    = ($_.IPAddress.IPAddressToString).Count
                     GatheredFrom       = $Computer
                 }
             } else {
@@ -36,6 +37,7 @@
                     EnableReordering   = $_.EnableReordering
                     Timeout            = $_.Timeout
                     UseRootHint        = $_.UseRootHint
+                    ForwardersCount    = ($_.IPAddress.IPAddressToString).Count
                     GatheredFrom       = $Computer
                 }
             }
