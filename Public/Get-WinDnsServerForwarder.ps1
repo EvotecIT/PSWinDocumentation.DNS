@@ -11,9 +11,9 @@
         [System.Collections.IDictionary] $ExtendedForestInformation
     )
     $ForestInformation = Get-WinADForestDetails -Forest $Forest -IncludeDomains $IncludeDomains -ExcludeDomains $ExcludeDomains -ExcludeDomainControllers $ExcludeDomainControllers -IncludeDomainControllers $IncludeDomainControllers -SkipRODC:$SkipRODC -ExtendedForestInformation $ExtendedForestInformation
-    foreach ($Computer in $ForestInformation.ForestDomainControllers.HostName) {
+    foreach ($Computer in $ForestInformation.ForestDomainControllers) {
         try {
-            $DnsServerForwarder = Get-DnsServerForwarder -ComputerName $Computer -ErrorAction Stop
+            $DnsServerForwarder = Get-DnsServerForwarder -ComputerName $Computer.HostName -ErrorAction Stop
         } catch {
             $ErrorMessage = $_.Exception.Message -replace "`n", " " -replace "`r", " "
             Write-Warning "Get-WinDnsServerForwarder - Error $ErrorMessage"
@@ -28,7 +28,8 @@
                     Timeout            = $_.Timeout
                     UseRootHint        = $_.UseRootHint
                     ForwardersCount    = ($_.IPAddress.IPAddressToString).Count
-                    GatheredFrom       = $Computer
+                    GatheredFrom       = $Computer.HostName
+                    GatheredDomain     = $Computer.Domain
                 }
             } else {
                 [PSCustomObject] @{
@@ -38,7 +39,8 @@
                     Timeout            = $_.Timeout
                     UseRootHint        = $_.UseRootHint
                     ForwardersCount    = ($_.IPAddress.IPAddressToString).Count
-                    GatheredFrom       = $Computer
+                    GatheredFrom       = $Computer.HostName
+                    GatheredDomain     = $Computer.Domain
                 }
             }
         }
