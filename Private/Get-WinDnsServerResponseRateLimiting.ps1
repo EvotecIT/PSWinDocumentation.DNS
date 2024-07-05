@@ -1,4 +1,25 @@
 ﻿function Get-WinDnsServerResponseRateLimiting {
+    <#
+    .SYNOPSIS
+    Retrieves DNS server response rate limiting settings information from the specified DNS servers.
+
+    .DESCRIPTION
+    This function retrieves detailed DNS server response rate limiting settings information from the specified DNS servers.
+
+    .PARAMETER ComputerName
+    Specifies the DNS servers from which to retrieve the response rate limiting settings information.
+
+    .PARAMETER Domain
+    Specifies the domain to use for retrieving DNS server information. Defaults to the current user's DNS domain.
+
+    .EXAMPLE
+    Get-WinDnsServerResponseRateLimiting -ComputerName "dns-server1", "dns-server2"
+    Retrieves DNS server response rate limiting settings information from the specified DNS servers "dns-server1" and "dns-server2".
+
+    .EXAMPLE
+    Get-WinDnsServerResponseRateLimiting -Domain "example.com"
+    Retrieves DNS server response rate limiting settings information from the DNS servers in the domain "example.com".
+    #>
     [CmdLetBinding()]
     param(
         [string[]] $ComputerName,

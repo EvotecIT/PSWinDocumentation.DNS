@@ -1,4 +1,52 @@
 ﻿function Get-WinDnsServerZones {
+    <#
+    .SYNOPSIS
+    Retrieves information about DNS server zones based on specified criteria.
+
+    .DESCRIPTION
+    This function retrieves information about DNS server zones based on the provided parameters. It can filter zones by various criteria such as zone type, zone name, and forest details.
+
+    .PARAMETER Forest
+    Specifies the forest name to retrieve DNS server zone information for.
+
+    .PARAMETER ExcludeDomains
+    Specifies an array of domains to exclude from the search.
+
+    .PARAMETER ExcludeDomainControllers
+    Specifies an array of domain controllers to exclude from the search.
+
+    .PARAMETER IncludeDomains
+    Specifies an array of domains to include in the search.
+
+    .PARAMETER IncludeDomainControllers
+    Specifies an array of domain controllers to include in the search.
+
+    .PARAMETER SkipRODC
+    Skips read-only domain controllers in the search.
+
+    .PARAMETER ExtendedForestInformation
+    Specifies additional forest information to include in the output.
+
+    .PARAMETER ReverseLookupZone
+    Indicates whether to retrieve reverse lookup zones.
+
+    .PARAMETER PrimaryZone
+    Indicates whether to retrieve primary zones.
+
+    .PARAMETER Forwarder
+    Indicates whether to retrieve forwarder zones.
+
+    .PARAMETER ZoneName
+    Specifies the name of the zone to retrieve.
+
+    .EXAMPLE
+    Get-WinDnsServerZones -Forest "example.com" -IncludeDomains "domain1.com", "domain2.com" -ExcludeDomainControllers "dc1.domain1.com" -PrimaryZone -ZoneName "example.com"
+    Retrieves information about primary DNS server zones for the "example.com" forest, including only "domain1.com" and "domain2.com" domains, excluding the domain controller "dc1.domain1.com", and filtering by the zone name "example.com".
+
+    .NOTES
+    File Name      : Get-WinDnsServerZones.ps1
+    Prerequisite   : This function requires the Get-WinADForestDetails function.
+    #>
     [CmdLetBinding()]
     param(
         [alias('ForestName')][string] $Forest,

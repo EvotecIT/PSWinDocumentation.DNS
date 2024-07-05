@@ -1,4 +1,41 @@
 ﻿function Get-WinDnsInformation {
+    <#
+    .SYNOPSIS
+    Retrieves comprehensive DNS server information from specified DNS servers.
+
+    .DESCRIPTION
+    This function retrieves detailed DNS server information from the specified DNS servers, including cache, client subnets, diagnostics, directory partitions, DS settings, EDNS settings, forwarders, global name zones, global query block lists, recursion settings, recursion scopes, response rate limiting settings, response rate limiting exception lists, root hints, scavenging settings, server settings, and virtualization status.
+
+    .PARAMETER Forest
+    Specifies the forest name to retrieve DNS server information from.
+
+    .PARAMETER ExcludeDomains
+    Specifies an array of domains to exclude from the query.
+
+    .PARAMETER ExcludeDomainControllers
+    Specifies an array of domain controllers to exclude from the query.
+
+    .PARAMETER IncludeDomains
+    Specifies an array of domains to include in the query.
+
+    .PARAMETER IncludeDomainControllers
+    Specifies an array of domain controllers to include in the query.
+
+    .PARAMETER Splitter
+    Specifies the character used to split data where applicable.
+
+    .PARAMETER ExtendedForestInformation
+    Specifies additional forest information to include in the output.
+
+    .EXAMPLE
+    Get-WinDnsInformation -Forest "example.com" -IncludeDomains "domain1.com", "domain2.com" -ExcludeDomainControllers "dc1.domain1.com" -Splitter "," -ExtendedForestInformation $ExtendedForestInfo
+    Retrieves comprehensive DNS server information from the forest "example.com", including specific domains and excluding a domain controller, using a comma as a splitter, and including extended forest information.
+
+    .EXAMPLE
+    Get-WinDnsInformation -Forest "example.com" -ExcludeDomains "domain3.com" -IncludeDomainControllers "dc2.domain1.com", "dc3.domain2.com"
+    Retrieves comprehensive DNS server information from the forest "example.com", excluding a specific domain and including specific domain controllers.
+
+    #>
     [CmdLetBinding()]
     param(
         [alias('ForestName')][string] $Forest,
