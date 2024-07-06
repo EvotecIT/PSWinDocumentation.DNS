@@ -1,4 +1,22 @@
 ﻿function Get-WinDnsServerDiagnostics {
+    <#
+    .SYNOPSIS
+    Retrieves DNS server diagnostics information from the specified DNS server.
+
+    .DESCRIPTION
+    This function retrieves detailed DNS server diagnostics information from the specified DNS server.
+
+    .PARAMETER ComputerName
+    Specifies the DNS server from which to retrieve the diagnostics information.
+
+    .EXAMPLE
+    Get-WinDnsServerDiagnostics -ComputerName "dns-server1"
+    Retrieves DNS server diagnostics information from the specified DNS server "dns-server1".
+
+    .NOTES
+    File Name      : Get-WinDnsServerDiagnostics.ps1
+    Prerequisite   : This function requires the Get-DnsServerDiagnostics cmdlet.
+    #>
     [CmdLetBinding()]
     param(
         [string] $ComputerName
